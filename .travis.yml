@@ -6,7 +6,7 @@ services:
     - docker
 
 before_install:
-    - docker build -f -t brendon-stephens/docker-react-demo Dockerfile.dev . 
+    - docker build -t brendon-stephens/docker-react-demo -f Dockerfile.dev . 
 
 script:
     - docker run -e CI=true brendon-stephens/docker-react-demo npm run test -- --coverage
